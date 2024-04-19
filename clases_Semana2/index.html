@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POO en JavaScript</title>
+</head>
+<body>
+    <h1>Explorando la Programación Orientada a Objetos en JavaScript</h1>
+
+    <script>
+        // Clase Persona
+        class Persona {
+            constructor(nombre, edad, profesion) {
+                this.nombre = nombre;
+                this.edad = edad;
+                this.profesion = profesion;
+            }
+
+            presentacion() {
+                alert(`Hola, mi nombre es ${this.nombre}, tengo ${this.edad} años y soy ${this.profesion}.`);
+            }
+        }
+
+        // Clase Rectangulo
+        class Rectangulo {
+            constructor(ancho, alto) {
+                this.ancho = ancho;
+                this.alto = alto;
+            }
+
+            area() {
+                return this.ancho * this.alto;
+            }
+        }
+
+        // Clase Estudiante
+        class Estudiante {
+            constructor(nombre, edad, carrera, promedio) {
+                this.nombre = nombre;
+                this.edad = edad;
+                this.carrera = carrera;
+                this.promedio = promedio;
+            }
+
+            promocion() {
+                return `¡Felicidades, ${this.nombre} se ha graduado de ${this.carrera} con un promedio de ${this.promedio}!`;
+            }
+        }
+
+        // Clase Banco
+        class Banco {
+            constructor(nombre, saldo) {
+                this.nombre = nombre;
+                this.saldo = saldo;
+            }
+
+            deposito(cantidad) {
+                this.saldo += cantidad;
+                alert(`Se ha depositado ${cantidad} al saldo. Saldo actual: ${this.saldo}`);
+            }
+
+            retiro(cantidad) {
+                if (cantidad <= this.saldo) {
+                    this.saldo -= cantidad;
+                    alert(`Se ha retirado ${cantidad} del saldo. Saldo actual: ${this.saldo}`);
+                } else {
+                    alert("Fondos insuficientes.");
+                }
+            }
+        }
+
+        // Clase Pelicula
+        class Pelicula {
+            constructor(titulo, director, duracion) {
+                this.titulo = titulo;
+                this.director = director;
+                this.duracion = duracion;
+            }
+
+            reproducir() {
+                alert(`Reproduciendo ${this.titulo}, dirigida por ${this.director}, con una duración de ${this.duracion} minutos.`);
+            }
+        }
+
+        // Crear instancias y probar los métodos
+        const persona = new Persona("Juan", 25, "Ingeniero");
+        persona.presentacion();
+
+        const rectangulo = new Rectangulo(5, 10);
+        alert("Área del rectángulo: " + rectangulo.area());
+
+        const estudiante = new Estudiante("María", 22, "Informática", 8.5);
+        alert(estudiante.promocion());
+
+        const banco = new Banco("Banco XYZ", 1000);
+        alert("Saldo inicial: " + banco.saldo);
+        banco.deposito(500);
+        banco.retiro(200);
+
+        const pelicula = new Pelicula("Inception", "Christopher Nolan", 148);
+        pelicula.reproducir();
+    </script>
+</body>
+</html>
